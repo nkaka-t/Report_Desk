@@ -1,0 +1,37 @@
+{
+  "name": "reportdesk-backend",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "dev:sqlite": "cross-env DB_CLIENT=sqlite node src/index.js",
+    "seed:sqlite": "cross-env DB_CLIENT=sqlite node src/seeds/seed.js",
+    "docker:up": "docker compose up -d",
+    "rundev": "npm run docker:up && npm install && npm run dev",
+    "lint": "eslint . --ext .js",
+    "test": "echo \"No tests yet\" && exit 0",
+    "seed": "node src/seeds/seed.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.15.2",
+    "nodemailer": "^7.0.9",
+    "pdfkit": "^0.17.2",
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "nodemon": "^3.1.10"
+  }
+}
